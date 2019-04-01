@@ -198,6 +198,12 @@ var budgetController = (function(){
 
         };
 
+        var nodeListForEach = function(list,callback){
+            for (var i =0; i<list.length; i++){
+                callback(list[i],i);
+            }
+        };
+
 
         return {
             // Public
@@ -269,11 +275,7 @@ var budgetController = (function(){
             displayPercentages: function(percentage){
                 var fields = document.querySelectorAll(DOMstrings.expensesPercenLabel);
 
-                var nodeListForEach = function(list,callback){
-                    for (var i =0; i<list.length; i++){
-                        callback(list[i],i);
-                    }
-                };
+                
 
                 nodeListForEach(fields,function(current,index){
                     // do staff
@@ -314,6 +316,21 @@ var budgetController = (function(){
 
             },
 
+            changeType : function(){
+                var fields = document.querySelectorAll(
+                    DOMstrings.inputType + ', ' + DOMstrings.inputDescription + ',' +
+                    DOMstrings.intputValue
+                );
+
+                // console.log(fields);
+
+                nodeListForEach(fields,function(current){
+                    current.classList.toggle('red-focus');
+                })
+
+                document.querySelector(DOMstrings.inputBtn).classList.toggle('red');
+            },
+
             
             // return dom string variables
             getDOMstrings: function(){ return DOMstrings;}  
@@ -343,6 +360,7 @@ var budgetController = (function(){
             });
 
             document.querySelector(DOM.container).addEventListener('click',ctrlDeleteItem);
+            document.querySelector(DOM.inputType).addEventListener('change', UICtrl.changeType);
         };
 
 
