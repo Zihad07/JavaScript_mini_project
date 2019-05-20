@@ -1,0 +1,111 @@
+
+* {
+    box-sizing: border-box;
+}
+body {
+    font-family: 'Open Sans', sans-serif;
+    background: #000;
+    overflow: hidden;
+}
+
+.container {
+    width: 1000px;
+    height: 550px;
+    margin: 20px auto;
+
+    background: linear-gradient(rgba(0,0,0,.3), rgba(0,0,0,0.3)) ,url('bgImg.jpg') no-repeat center center/cover;
+}
+
+.calculator {
+    width: 320px;
+    height: 520px;
+    background: #eaedef;
+    margin:  auto;
+
+    position: relative;
+    top: 10px;
+    border-radius: 5px;
+
+    box-shadow: 0 4px 8px rgba(0,0,0,.4),
+                4px 0 8px rgba(0,0,0,.4),
+                0 -4px 8px rgba(0,0,0,.4),
+                -4px 0 8px rgba(0,0,0,.4);
+
+}
+
+.result {
+    height: 120px;
+}
+
+.history {
+    /* border: 1px solid #ccc; */
+    height: 20px;
+    margin: 0 20px;
+    padding-top: 20px;
+    font-size: 15px;
+    color: #91919191; 
+    
+    text-align: right;
+}
+
+.output {
+    text-align: right;
+    height: 60px;
+    margin: 10px 20px;
+    font-size: 30px;
+}
+
+.keyboard {
+    height: 400px;;
+}
+
+.operator, .number, .empty {
+    width: 50px;
+    height: 50px;
+    margin: 15px;
+    float: left;
+    border: none;
+    border-radius: 50%;
+    font-size: 15px;
+    font-weight: bold;
+}
+
+.number, .empty {
+    background: #eaedef;
+}
+
+.number, .operator {
+    cursor: pointer;
+    /* transition: 0.2 all; */
+}
+
+
+.operator:focus,
+.number:focus,
+ .empty:focus {
+     outline: none;
+ }
+
+.number:active, .operator:active {
+    font-size: 12px;
+}
+
+button:nth-child(4n){
+    font-size: 20px;
+}
+
+button:nth-child(4) {
+    background: #20b2aa;
+}
+button:nth-child(8) {
+    background: #ffa500;
+}
+button:nth-child(12) {
+    background: #f08080;
+}
+button:nth-child(26) {
+    background: #7d93e0;
+}
+button:nth-child(20) {
+    background: #9477af;
+}
